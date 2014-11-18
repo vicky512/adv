@@ -8,6 +8,9 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('127.0.0.1:27017/nodeTest1');
 
 var app = express();
 
@@ -23,14 +26,31 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.get('/*', function(req, res, next){
+	// console.log('in app.use');
+	// console.log(db);
+	req.db = db;
+	next();
+});
+
+app.post('/*', function(req, res, next){
+	req.db = db;
+	next();
+});
+
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/testPage1', routes.testPage);
+app.get('/display', routes.displayUsers);
+app.get('/add', routes.newUser);
+app.post('/add', routes.addNewUser);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
