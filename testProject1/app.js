@@ -8,9 +8,8 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('127.0.0.1:27017/nodeTest1');
+var mongo = require('mongoskin');
+var db = mongo.db('mongodb://127.0.0.1:27017/nodeTest1', {native_parser:true});
 
 var app = express();
 
@@ -33,7 +32,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/*', function(req, res, next){
+app.use(function(req, res, next){
 	// console.log('in app.use');
 	// console.log(db);
 	req.db = db;

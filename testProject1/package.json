@@ -10,6 +10,6 @@
     "jade": "*",
     "ejs" : "*",
     "mongodb" : "*",
-    "monk": "*"
+    "mongoskin": "*"
   }
 }
