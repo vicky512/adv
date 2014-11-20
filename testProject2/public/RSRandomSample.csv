@@ -1,5 +1,7 @@
-ruleName,fieldName,fieldDesc,source,fieldFormat,fieldFormatDesc,lowerLimit,upperLimit,dateUpdated
-FR_year,year,Represents the time interval,,^(19|20)([0-9]{2})$,Year in YYYY format,0,1,
-NR_year,year,,,^$,Null check,0,0,
-FR_data,data,Represents the count of records at that specific interval in time,,"^$|^([0-9]{1,20})$",Numeric values ranging from one digit to twenty digits in length,0,1,
-NR_data,data,,,^$,Null check,0,0,
+ruleName,fieldName,fieldDesc,source,fieldFormat,fieldFormatDesc,lowerLimit,upperLimit,dateUpdated,
+FR_year,year,Represents the time interval,,^$|^(19|20)([0-9]{2})$,Year in YYYY format,0,1,11/10/2014,
+NR_year,year,,,^$,Null check,0,0,11/10/2014,
+FR_id,id,Represents ID of a company,,"^$|^([0-9]{7,14})$",Numeric values ranging from seven digits to fourteen digits in length,0,1,11/10/2014,
+NR_id,id,,,^$,Null check,0,0,11/10/2014,
+FR_vertical,vertical,Represents the vertical corresponding to the company,,^$|^(rec_management)|(finan_services)|(corp_management)|(core)|(potential)|(emerging)|(pending)$,"values: rec_management, finan_services, corp_management, core, potential, emerging, pending",0,1,11/10/2014,
+NR_vertical,vertical,,,^$,Null check,0,0,11/10/2014,

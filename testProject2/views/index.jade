@@ -1,5 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	p Welcome to ADV(Automated Data Validation)
+
+	#wrapper
+		#summaryResult
+			table
+				thead
+					th ruleName
+					th ruleMeaning
+					th lowerLimit
+					th upperLimit
+					th matchScore
+					th conclusion
+				tbody
+		// /summary result
+		#detailedResult
+			table
+				thead
+					th ruleName
+					th failedValue
+				tbody
