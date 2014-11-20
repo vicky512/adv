@@ -18,8 +18,8 @@ a {
 
 #summaryResult {
 	margin:0 0 30px 0;
-	display: none;
-	visibility: hidden;
+/*	display: none;
+	visibility: hidden;*/
 }
 	#summaryResult table {
 		border-collapse:separate;
@@ -45,30 +45,9 @@ a {
 
 
 #valueChart {
-	margin:0 0 30px 0;
+	margin:0 0 0 0;
 	
 }
-	#valueChart table {
-		border-collapse:separate;
-		border-spacing:1px;
-		background:#CCC;
-	}
-		#valueChart table th {
-			background:#EEE;
-			font-weight:600;
-			padding:10px 20px;
-			text-align:center;
-		}
-		#valueChart table tbody {
-			padding:0; margin:0;
-			border-collapse:collapse;
-			border-spacing:0px;
-		}
-			#valueChart table td {
-				background:#FFF;
-				padding:5px 10px;
-				text-align:center;
-			}
 
 #detailedResult {
 	width:250px;
@@ -85,3 +64,66 @@ fieldset {
 	border:0;
 	padding:0; margin:0;
 }
+
+
+#valuesOverTimeChart {
+	width: 1300px; 
+	margin: 20px 20px 50px auto;
+	background: rgba(255,255,255,0.5);
+	box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+	padding: 20px 30px;
+}
+
+#valuesOverTimeChart h2 {
+	color: #444;
+	margin: 0 0 10px;
+	font-weight: 300;
+	padding: 10px;
+	text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+	font-size: 24px;
+}
+
+#valuesOverTimeChart svg {
+	font-family: 'Lato', Arial, serif;
+	font-size: 10px;
+	font-weight: 700;
+	text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+}
+
+text.country-title {
+	font-size: 20px;
+	color: white;
+}
+
+text.instructions {
+	font-size: 16px;
+}
+
+g.context g.brush rect.background {
+	fill: rgba(10,0,0,.1);
+}
+
+g.context g.axis path {
+	stroke-opacity: 0;
+}
+
+g.context g.axis line {
+	stroke-opacity: .1;
+}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: #aaa;
+	shape-rendering: crispEdges;
+}
+
+.brush .extent {
+	stroke: #f09f8c;
+	fill-opacity: .125;
+	shape-rendering: crispEdges;
+}
+
+g.context rect.background{
+	fill: rgb(200,200,255);
+	visibility: visible !important;
+}​
